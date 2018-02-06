@@ -1,7 +1,7 @@
 <div class="row justify-content-center mt-4 ">
   <div class=" col-lg-4 col-sm-12 ">
     <!-- Form login -->
-    <form class="form-elegant ">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-elegant ">
       <!--Form without header-->
       <div class="card">
 
@@ -12,18 +12,22 @@
           </div>
           <!--Body-->
           <div class="md-form">
-            <input type="text" id="Form-email" class="form-control">
-            <label for="Form-email">Your email</label>
+            <input placeholder="Your email" type="email" id="email" email="true" formControlName="email"  class="form-control" required>
+            <div *ngIf="isFieldInvalid('email')">
+              Please enter a valid password.
+            </div>
           </div>
           <div class="md-form pb-2">
-            <input type="password" id="Form-pass" class="form-control">
-            <label for="Form-pass">Your password</label>
+            <input type="password" placeholder="Your password" id="pass" class="form-control" formControlName="password" required>
+            <div *ngIf="isFieldInvalid('password')">
+              Please enter a valid password.
+            </div>
             <p class="font-small blue-text d-flex justify-content-end">
               Forgot <a href="#" class="blue-text ml-1"> Password?</a>
             </p>
           </div>
           <div class="text-center mb-3">
-            <button type="button" class="btn blue btn-block btn-rounded z-depth-1a">Sign in</button>
+            <button type="submit" class="btn blue btn-block btn-rounded z-depth-1a">Sign in</button>
           </div>
           <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign in with:</p>
           <div class="row my-3 d-flex justify-content-center">

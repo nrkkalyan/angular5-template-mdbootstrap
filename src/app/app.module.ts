@@ -14,6 +14,7 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
 import { AsideComponent } from './aside/aside.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    ReactiveFormsModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [AuthService, AuthGuard],
