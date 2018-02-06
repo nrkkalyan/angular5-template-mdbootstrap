@@ -15,6 +15,7 @@ import { AsideComponent } from './aside/aside.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     AuthLayoutComponent,
     MainLayoutComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
